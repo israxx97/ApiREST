@@ -38,6 +38,18 @@ Este proyecto tiene como objetivo la creación de un REST propio con PHP y MySQL
   
   ## Uso del REST propio
   
+  * Para mostrar los datos de todos los productos:
+    
+    ~~~
+    www.dominio.com/ApiREST/gafas
+    ~~~
+    
+  * Para mostrar los datos de un producto por su id:
+  
+    ~~~
+    www.dominio.com/ApiREST/gafas/[ID]
+    ~~~
+  
 </div>
 
 <div id='enlaces'>
