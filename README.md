@@ -49,6 +49,18 @@ Este proyecto tiene como objetivo la creación de un REST propio con PHP y MySQL
     ~~~
     www.dominio.com/ApiREST/gafas/[ID]
     ~~~
+
+  * Para mostrar los datos de todos los productos en clase:
+
+    ~~~
+    http://192.168.20.19/DAW202/public_html/ApiREST/gafas
+    ~~~
+
+  * Para mostrar los datos de un producto por su id en clase:
+
+    ~~~
+    http://192.168.20.19/DAW202/public_html/ApiREST/gafas/[ID]
+    ~~~
   
 </div>
 
