@@ -1,20 +1,33 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * File GafasPDO.php
+ * 
+ * Archivo con las funciones que hacen el acceso a datos.
+ * 
+ * @package model
  */
 require_once 'model/GafasDB.php';
 require_once 'model/DBPDO.php';
 
 /**
- * Description of GafasPDO
- *
- * @author israel
+ * Class GafasPDO
+ * 
+ * Declaración de la función getGafas que se usará en GafasPDO.
+ * 
+ * @author Israel García Cabañeros <israel.garcab@educa.jcyl.es>
+ * @implements GafasDB
  */
 class GafasPDO implements GafasDB {
 
+    /**
+     * Function getGafasPorId
+     * 
+     * Función que devuelve un array con las gafas que coinciden con el id de las gafas pasado por parámetro.
+     * 
+     * @param String $idGafas ID de las gafas
+     * @return Array $a_gafas
+     */
     public static function getGafasPorId($idGafas) {
         $a_gafas = [];
         $sql = 'SELECT * FROM T05_Gafas WHERE T05_IdGafas = ?';
@@ -29,6 +42,14 @@ class GafasPDO implements GafasDB {
         return $a_gafas;
     }
 
+    /**
+     * Function getGafas
+     * 
+     * Función que devuelve un array con todas las gafas.
+     * 
+     * @param String $idGafas
+     * @return Array $a_gafas
+     */
     public static function getGafas() {
         $a_gafa = [];
         $a_gafas = [];

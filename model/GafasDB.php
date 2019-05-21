@@ -1,18 +1,38 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * File GafasDB.php
+ * 
+ * Archivo que contiene métodos que se implementarán en GafasPDO.
+ * 
+ * @package model
  */
 
 /**
- *
- * @author israel
+ * Interface GafasDB
+ * 
+ * Archivo que contiene métodos que se implementarán en GafasPDO.
+ * 
+ * @author Israel García Cabañeros <israel.garcab@educa.jcyl.es>
  */
 interface GafasDB {
 
+    /**
+     * Function getGafasPorId
+     * 
+     * Declaración de la función getGafasPorId que se usará en GafasPDO.
+     * 
+     * @param String $idGafas ID único de las gafas
+     * @author Israel García Cabañeros <israel.garcab@educa.jcyl.es>
+     */
     public static function getGafasPorId($idGafas);
 
+    /**
+     * Function getGafas
+     * 
+     * Declaración de la función getGafas que se usará en GafasPDO.
+     * 
+     * @author Israel García Cabañeros <israel.garcab@educa.jcyl.es>
+     */
     public static function getGafas();
 }
