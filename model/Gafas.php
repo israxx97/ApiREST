@@ -1,19 +1,30 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * File Gafas.php
+ * 
+ * Clase Gafas con funciones.
+ * 
+ * @package model
  */
 require_once 'model/GafasPDO.php';
 
 /**
- * Description of Gafas
+ * Class Gafas
+ * 
+ * Clase con funciones usadas para el método de llamada de la Api.
  *
- * @author israel
+ * @author Israel García Cabañeros <israel.garcab@educa.jcyl.es>
  */
 class Gafas {
 
+    /**
+     * Function ApiREST
+     * 
+     * Se coge el método HTTP para el Api.
+     * 
+     * @author Israel García Cabañeros <israel.garcab@educa.jcyl.es>
+     */
     public function ApiREST() {
         header('Content-Type: application/JSON');
         $metodo = $_SERVER['REQUEST_METHOD'];
@@ -21,7 +32,7 @@ class Gafas {
         switch ($metodo) {
             case 'GET':
                 $this->getGafas();
-                
+
                 break;
 
             case 'POST':
@@ -43,6 +54,13 @@ class Gafas {
         }
     }
 
+    /**
+     * Function getGafas
+     * 
+     * Se usa una función de GafasPDO dependiendo de los parámetros pasados.
+     * 
+     * @author Israel García Cabañeros <israel.garcab@educa.jcyl.es>
+     */
     public static function getGafas() {
         if ($_REQUEST['action'] == 'gafas') {
             $gafasPdo = new GafasPDO();

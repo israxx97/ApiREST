@@ -1,22 +1,36 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * File DBPDO.php
+ * 
+ * Archivo que se encuentra en la parte del modelo con el acceso a datos.
+ * 
+ * @package model
  */
-require_once 'config/configDB_ED.php';
+require_once 'config/configDB_localhost.php';
 
 /**
- * Description of DBPDO
+ * Class DBPDO
+ * 
+ * Clase con una función usada en las clases PDO para ejecutar los query.
  *
- * @author israel
+ * @author Israel García Cabañeros <israel.garcab@educa.jcyl.es>
  */
 class DBPDO {
 
+    /**
+     * Function ejecutaConsulta
+     * 
+     * Se crea la conexión con la base de datos y prepara la consulta.
+     * 
+     * @author Israel García Cabañeros <israel.garcab@educa.jcyl.es>
+     * @param String $sentenciaSQL sentencia sql de la bbdd
+     * @param Array $parametros parametros que se le pasan a la consulta a la bbdd
+     * @return String consulta con los parámetos pasados
+     */
     public static function ejecutaConsulta($sentenciaSQL, $parametros) {
         try {
-            $miDB = new PDO(HOST_DB_ED, USER_DB_ED, PASS_DB_ED);
+            $miDB = new PDO(HOST_DB_localhost, USER_DB_localhost, PASS_DB_localhost);
             $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $statement = $miDB->prepare($sentenciaSQL);
             $statement->execute($parametros);
